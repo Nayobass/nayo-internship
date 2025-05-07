@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
+import ReactOwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 import axios from "axios";
 
 const HotCollections = () => {
   const [collections, setCollections] = useState([]);
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  const options = {
+    items: 4,
+    loop: true,
+    margin: 10,
+    nav: true,
+    dots: false
   };
 
   async function getCollections() {
@@ -24,8 +26,6 @@ const HotCollections = () => {
     getCollections();
   }, []);
 
-  console.log(collections);
-
   return (
     <section id="section-collections" className="no-bottom">
       <div className="container">
@@ -36,10 +36,10 @@ const HotCollections = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          {collections.map((collection, index) => (
-            <Slider {...settings}>
-              <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={index}>
-                <div className="nft_coll">
+          <div className="hc__container col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <ReactOwlCarousel className="owl-theme" {...options}>
+              {collections.map((collection, index) => (
+                <div className="nft_coll" key={index}>
                   <div className="nft_wrap">
                     <Link to="/item-details">
                       <img
@@ -66,9 +66,9 @@ const HotCollections = () => {
                     <span>ERC-{collection.code}</span>
                   </div>
                 </div>
-              </div>
-            </Slider>
-          ))}
+              ))}
+            </ReactOwlCarousel>
+          </div>
         </div>
       </div>
     </section>
