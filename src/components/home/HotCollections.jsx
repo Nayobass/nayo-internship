@@ -65,23 +65,15 @@ const HotCollections = () => {
               <Slider {...settings}>
                 <div className="nft_coll">
                   <div className="nft_wrap">
-                    <div
-                      class="nftwrap_skeleton-box"
-                    ></div>
+                    <div className="skeleton-box" style={{width: '100%', height: '200px', backgroundColor: '#dddbdd'}}></div>
                   </div>
                   <div className="nft_coll_pp">
-                    <div
-                      class="nftuserimg_skeleton-box"
-                    ></div>
-                    <i class="fa fa-check"></i>
+                    <div className="skeleton-box" style={{width: '50px', height: '50px', borderRadius: '50%', backgroundColor: '#dddbdd'}}></div>
+                    <i className="fa fa-check"></i>
                   </div>
                   <div className="nft_coll_info">
-                    <div
-                      class="nfttitle_skeleton-box"
-                    ></div>
-                    <div
-                      class="nftcode_skeleton-box"
-                    ></div>
+                    <div className="skeleton-box" style={{width: '100px', height: '20px', backgroundColor: '#dddbdd'}}></div>
+                    <div className="skeleton-box" style={{width: '60px', height: '20px', backgroundColor: '#dddbdd'}}></div>
                   </div>
                 </div>
               </Slider>
