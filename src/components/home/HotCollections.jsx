@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,6 +8,7 @@ import axios from "axios";
 const HotCollections = () => {
   const [collections, setCollections] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   const settings = {
     arrows: true,
     dots: false,
@@ -114,22 +115,30 @@ const HotCollections = () => {
                 {collections.map((collection, index) => (
                   <div className="nft_coll" key={index}>
                     <div className="nft_wrap">
-                      <Link to="/item-details">
+                      <div className="link__navigate"
+                        onClick={() => {
+                          navigate(`/item-details/${collection.nftId}`);
+                        }}
+                      >
                         <img
                           src={collection.nftImage}
                           className="lazy img-fluid"
                           alt=""
                         />
-                      </Link>
+                      </div>
                     </div>
                     <div className="nft_coll_pp">
-                      <Link to="/author">
+                      <div className="link__navigate"
+                        onClick={() => {
+                          navigate(`/author/${collection.authorId}`);
+                        }}
+                      >
                         <img
                           className="lazy pp-coll"
                           src={collection.authorImage}
                           alt=""
                         />
-                      </Link>
+                      </div>
                       <i className="fa fa-check"></i>
                     </div>
                     <div className="nft_coll_info">
