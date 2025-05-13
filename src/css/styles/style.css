@@ -893,6 +893,10 @@ header:not(.header-mobile) #mainmenu > li:hover ul.mega {
   display: flex !important;
 }
 
+.link__navigate {
+  cursor: pointer;
+}
+
 @media (max-width: 991px) {
   #mainmenu {
     display: none;
