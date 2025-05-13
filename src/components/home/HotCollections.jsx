@@ -24,7 +24,7 @@ const HotCollections = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 767,
         settings: {
           slidesToShow: 2,
         },
@@ -63,19 +63,51 @@ const HotCollections = () => {
           <div className="">
             {loading ? (
               <Slider {...settings}>
-                <div className="nft_coll">
-                  <div className="nft_wrap">
-                    <div className="skeleton-box" style={{width: '100%', height: '200px', backgroundColor: '#dddbdd'}}></div>
+                {[...Array(6)].map((_, index) => (
+                  <div className="nft_coll" key={index}>
+                    <div className="nft_wrap">
+                      <div
+                        className="skeleton-box"
+                        style={{
+                          width: "100%",
+                          height: "200px",
+                          backgroundColor: "#dddbdd",
+                        }}
+                      ></div>
+                    </div>
+                    <div className="nft_coll_pp">
+                      <div
+                        className="skeleton-box"
+                        style={{
+                          width: "50px",
+                          height: "50px",
+                          borderRadius: "50%",
+                          backgroundColor: "#dddbdd",
+                        }}
+                      ></div>
+                      <i className="fa fa-check"></i>
+                    </div>
+                    <div className="nft_coll_info" style={{ padding: "0" }}>
+                      <div
+                        className="skeleton-box"
+                        style={{
+                          width: "100px",
+                          height: "20px",
+                          backgroundColor: "#dddbdd",
+                        }}
+                      ></div>
+                    </div>
+                    <div
+                      className="skeleton-box"
+                      style={{
+                        width: "60px",
+                        height: "20px",
+                        backgroundColor: "#dddbdd",
+                        display: "inline-block",
+                      }}
+                    ></div>
                   </div>
-                  <div className="nft_coll_pp">
-                    <div className="skeleton-box" style={{width: '50px', height: '50px', borderRadius: '50%', backgroundColor: '#dddbdd'}}></div>
-                    <i className="fa fa-check"></i>
-                  </div>
-                  <div className="nft_coll_info">
-                    <div className="skeleton-box" style={{width: '100px', height: '20px', backgroundColor: '#dddbdd'}}></div>
-                    <div className="skeleton-box" style={{width: '60px', height: '20px', backgroundColor: '#dddbdd'}}></div>
-                  </div>
-                </div>
+                ))}
               </Slider>
             ) : (
               <Slider {...settings}>
