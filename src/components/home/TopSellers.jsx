@@ -7,15 +7,11 @@ const SellerSkeleton = () => (
   <li className="seller-item">
     <div className="author_list_pp">
       <div className="skeleton-wrapper">
-        <div className="skeleton skeleton-avatar"></div>
+        <div className=" skeleton-avatar"></div>
       </div>
-    </div>
-    <div className="author_list_info">
-      <div className="skeleton-wrapper">
-        <div className="skeleton skeleton-bar skeleton-name"></div>
-      </div>
-      <div className="skeleton-wrapper">
-        <div className="skeleton skeleton-bar skeleton-price"></div>
+      <div className="author_list_info">
+        <div className=" skeleton-bar skeleton-price"></div>
+        <div className=" skeleton-bar skeleton-name"></div>
       </div>
     </div>
   </li>
@@ -50,8 +46,8 @@ const TopSellers = () => {
           <div className="">
             <ol className="author_list">
               {loading
-                ? Array.from({ length: 12 }).map((_, idx) => (
-                    <SellerSkeleton key={idx} />
+                ? [...Array(12)].map((_, idx) => (
+                    <SellerSkeleton key={idx} className="skeleton-item" />
                   ))
                 : sellers.map((seller, index) => (
                     <li key={index}>
