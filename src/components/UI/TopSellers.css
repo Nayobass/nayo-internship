@@ -7,15 +7,10 @@
 }
 
 .seller-item {
+  width: 208px;
   margin-bottom: 30px;
   height: 51.3px;
   position: relative;
-}
-
-.author_list_pp {
-  width: 50px;
-  height: 57.5px;
-  position: absolute;
 }
 
 .skeleton-topseller {
@@ -30,11 +25,10 @@
 }
 
 .author_list_info {
-  width: 100%;
+  width: 208px;
+  height: 51.3px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .skeleton-price {
@@ -48,8 +42,21 @@
   animation: skeleton-loading 1.5s infinite linear;
 }
 
+.skeleton-name {
+  width: 40px;
+  height: 20px;
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 4px;
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+}
 
 @keyframes skeleton-loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }

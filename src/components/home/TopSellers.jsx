@@ -6,13 +6,12 @@ import axios from "axios";
 const SellerSkeleton = () => (
   <li className="seller-item">
     <div className="author_list_pp">
-      <div className="skeleton-topseller">
+      <div className="skeleton-topseller"></div>
       <i className="fa fa-check"></i>
-      </div>
-      <div className="author_list_info">
-        <div className="skeleton-price"></div>
-        <div className="skeleton-name"></div>
-      </div>
+    </div>
+    <div className="author_list_info">
+      <div className="skeleton-price"></div>
+      <div className="skeleton-name"></div>
     </div>
   </li>
 );
