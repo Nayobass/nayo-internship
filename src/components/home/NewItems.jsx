@@ -26,6 +26,7 @@ const NewItems = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [now, setNow] = useState(Date.now());
+  const navigate = useNavigate();
   const settings = {
     arrows: true,
     dots: false,
